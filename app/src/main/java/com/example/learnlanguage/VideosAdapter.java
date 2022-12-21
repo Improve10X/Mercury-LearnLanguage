@@ -40,7 +40,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
         holder.videoTitleTxt.setText(video.title);
         holder.chanelNameTxt.setText(video.chanelName);
         holder.viewsTxt.setText(video.views);
-        holder.updateTimeTxt.setText(video.uploadTime);
+        holder.updateTimeTxt.setText(video.uploadedTime);
     }
 
     @Override
