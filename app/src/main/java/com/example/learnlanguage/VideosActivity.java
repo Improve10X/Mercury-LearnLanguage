@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class VideosActivity extends AppCompatActivity {
+public class VideosActivity extends BaseActivity {
 
     private ArrayList<Video> videos;
     private RecyclerView videosRv;
