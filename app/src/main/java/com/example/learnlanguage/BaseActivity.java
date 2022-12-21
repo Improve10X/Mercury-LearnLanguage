@@ -7,9 +7,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learnlanguage.network.VideosApi;
+import com.example.learnlanguage.network.VideosService;
+
 public class BaseActivity extends AppCompatActivity {
 
-    protected CrudService crudService;
+    protected VideosService videosService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,8 +32,8 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void setupApiService() {
-        CrudApi crudApi = new CrudApi();
-        crudService = crudApi.createCrudService();
+        VideosApi videosApi = new VideosApi();
+        videosService = videosApi.createCrudService();
     }
 
     protected void showToast(String message) {

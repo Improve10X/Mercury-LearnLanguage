@@ -60,7 +60,7 @@ public class BaseAddEditVideoActivity extends BaseActivity {
         video.views = views;
         video.uploadedTime = uploadedTime;
 
-        Call<Video> call = crudService.createVideo(video);
+        Call<Video> call = videosService.createVideo(video);
         call.enqueue(new Callback<Video>() {
             @Override
             public void onResponse(Call<Video> call, Response<Video> response) {

@@ -14,10 +14,15 @@ import java.util.List;
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     private List<Video> videos;
+    private OnItemActionListener onItemActionListener;
 
     void setData(List<Video> videos) {
         this.videos = videos;
         notifyDataSetChanged();
+    }
+
+    void setOnItemActionListener(OnItemActionListener onItemActionListener) {
+        this.onItemActionListener = onItemActionListener;
     }
 
     @NonNull
@@ -41,6 +46,9 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
         holder.channelNameTxt.setText(video.channelName);
         holder.viewsTxt.setText(video.views);
         holder.uploadedTimeTxt.setText(video.uploadedTime);
+        holder.deleteBtn.setOnClickListener(view -> {
+            onItemActionListener.onDelete(video.id);
+        });
     }
 
     @Override

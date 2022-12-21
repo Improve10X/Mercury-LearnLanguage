@@ -1,6 +1,7 @@
 package com.example.learnlanguage;
 
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
     TextView channelNameTxt;
     TextView viewsTxt;
     TextView uploadedTimeTxt;
+    ImageButton deleteBtn;
 
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -24,5 +26,6 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
         channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
         viewsTxt = itemView.findViewById(R.id.views_txt);
         uploadedTimeTxt = itemView.findViewById(R.id.uploaded_time_txt);
+        deleteBtn = itemView.findViewById(R.id.delete_btn);
     }
 }

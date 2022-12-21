@@ -39,7 +39,7 @@ public class VideosActivity extends BaseActivity {
     }
 
     private void fetchVideos() {
-        Call<List<Video>> call = crudService.fetchVideos();
+        Call<List<Video>> call = videosService.fetchVideos();
         call.enqueue(new Callback<List<Video>>() {
             @Override
             public void onResponse(Call<List<Video>> call, Response<List<Video>> response) {
@@ -75,5 +75,32 @@ public class VideosActivity extends BaseActivity {
     private void setupVideosAdapter() {
         videosAdapter = new VideosAdapter();
         videosAdapter.setData(videos);
+        videosAdapter.setOnItemActionListener(new OnItemActionListener() {
+            @Override
+            public void onDelete(String id) {
+                deleteVideo(id);
+            }
+
+            @Override
+            public void onEdit(Video video) {
+
+            }
+        });
+    }
+
+    private void deleteVideo(String id) {
+        Call<Void> call = videosService.deleteVideo(id);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                fetchVideos();
+                showToast("Successfully Deleted Video");
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                showToast("Failed to Delete Video");
+            }
+        });
     }
 }

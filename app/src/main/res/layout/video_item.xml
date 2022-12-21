@@ -29,6 +29,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -86,6 +87,14 @@
                     android:text="TextView" />
             </LinearLayout>
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00686464"
+            app:srcCompat="@drawable/ic_baseline_delete_24" />
 
     </LinearLayout>
 </LinearLayout>
