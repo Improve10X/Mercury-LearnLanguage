@@ -61,7 +61,7 @@ public class VideosActivity extends BaseActivity {
 
     private void handleAdd() {
         addBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, BaseAddEditVideoActivity.class);
+            Intent intent = new Intent(this, AddVideoActivity.class);
             startActivity(intent);
         });
     }
@@ -82,7 +82,7 @@ public class VideosActivity extends BaseActivity {
 
             @Override
             public void onEdit(Video video) {
-
+                editVideo(video);
             }
         });
     }
@@ -101,5 +101,11 @@ public class VideosActivity extends BaseActivity {
                 showToast("Failed to Delete Video");
             }
         });
+    }
+
+    private void editVideo(Video video){
+        Intent intent = new Intent(this, EditVideoActivity.class);
+        intent.putExtra(Constants.KEY_VIDEO, video);
+        startActivity(intent);
     }
 }
