@@ -66,7 +66,6 @@ public class VideosActivity extends BaseActivity {
         });
     }
 
-
     private void setupVideosRv() {
         videosRv.setLayoutManager(new LinearLayoutManager(this));
         videosRv.setAdapter(videosAdapter);
