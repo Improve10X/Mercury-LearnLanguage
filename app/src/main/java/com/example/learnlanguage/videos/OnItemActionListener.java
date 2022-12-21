@@ -1,4 +1,6 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
+
+import com.example.learnlanguage.videos.Video;
 
 public interface OnItemActionListener {
 

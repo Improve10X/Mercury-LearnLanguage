@@ -1,7 +1,7 @@
 package com.example.learnlanguage.network;
 
 import com.example.learnlanguage.Constants;
-import com.example.learnlanguage.Video;
+import com.example.learnlanguage.videos.Video;
 
 import java.util.List;
 

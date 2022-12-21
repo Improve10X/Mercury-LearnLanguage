@@ -1,12 +1,10 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.example.learnlanguage.BaseActivity;
+import com.example.learnlanguage.R;
 
 public class BaseAddEditVideoActivity extends BaseActivity {
 

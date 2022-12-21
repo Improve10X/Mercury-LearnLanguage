@@ -1,4 +1,4 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
 
 import com.google.gson.annotations.SerializedName;
 

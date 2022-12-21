@@ -1,9 +1,11 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.learnlanguage.Constants;
+import com.example.learnlanguage.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;

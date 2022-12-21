@@ -1,10 +1,10 @@
 package com.example.learnlanguage;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.learnlanguage.videos.VideosActivity;
 
 public class SplashActivity extends BaseActivity {
 

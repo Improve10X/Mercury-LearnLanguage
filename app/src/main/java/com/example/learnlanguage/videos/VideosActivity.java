@@ -1,4 +1,4 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.learnlanguage.BaseActivity;
+import com.example.learnlanguage.Constants;
+import com.example.learnlanguage.R;
 
 import java.util.ArrayList;
 import java.util.List;
