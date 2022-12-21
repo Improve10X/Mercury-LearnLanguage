@@ -3,7 +3,9 @@ package com.example.learnlanguage;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,7 @@ public class VideosActivity extends BaseActivity {
     private ArrayList<Video> videos = new ArrayList<>();
     private RecyclerView videosRv;
     private VideosAdapter videosAdapter;
+    private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,9 @@ public class VideosActivity extends BaseActivity {
         setContentView(R.layout.activity_videos);
         getSupportActionBar().setTitle("Videos");
         initViews();
-        //setupData();
         setupVideosAdapter();
         setupVideosRv();
+        handleAdd();
     }
 
     @Override
@@ -53,24 +56,16 @@ public class VideosActivity extends BaseActivity {
 
     private void initViews() {
         videosRv = findViewById(R.id.videos_rv);
+        addBtn = findViewById(R.id.add_btn);
     }
 
-    /*private void setupData() {
-        videos = new ArrayList<>();
+    private void handleAdd() {
+        addBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, BaseAddEditVideoActivity.class);
+            startActivity(intent);
+        });
+    }
 
-        Video video1 = new Video();
-        video1.title = "English Short Stories For Kids English Cartoon With English Subtitle 7";
-        video1.imageUrl = "https://i.ytimg.com/an_webp/r2pEEkaFq8U/mqdefault_6s.webp?du=3000&sqp=CPXLhp0G&rs=AOn4CLADVtuxu9YSYGM8CsuwHtMifDlo4g";
-        video1.chanelLogoImageUrl = "https://yt3.ggpht.com/ytc/AMLnZu_wfmAAKPIOXVPRnPkHSRrBvNUoOW50aNWyRioLjw=s48-c-k-c0x00ffffff-no-rj";
-        video1.chanelName = "vesko stayn";
-        video1.views = "5M views";
-        video1.uploadedTime = "6 years ago";
-        videos.add(video1);
-        videos.add(video1);
-        videos.add(video1);
-        videos.add(video1);
-        videos.add(video1);
-    }*/
 
     private void setupVideosRv() {
         videosRv.setLayoutManager(new LinearLayoutManager(this));

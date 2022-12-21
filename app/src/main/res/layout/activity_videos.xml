@@ -7,8 +7,24 @@
     android:orientation="vertical"
     tools:context=".VideosActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/videos_rv"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/videos_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:text="Add"
+        android:textAllCaps="false" />
+
 </LinearLayout>

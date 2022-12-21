@@ -7,9 +7,9 @@ public class Video {
     @SerializedName("_id")
     public String id;
     public String title;
-    public String imageUrl;
-    public String chanelLogoImageUrl;
-    public String chanelName;
+    public String videoImageUrl;
+    public String channelLogoImageUrl;
+    public String channelName;
     public String views;
     public String uploadedTime;
 }

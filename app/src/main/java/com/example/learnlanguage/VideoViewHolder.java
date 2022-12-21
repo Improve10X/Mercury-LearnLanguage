@@ -10,19 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 public class VideoViewHolder extends RecyclerView.ViewHolder {
 
     ImageView videoImg;
-    ImageView chanelLogoImg;
+    ImageView channelLogoImg;
     TextView videoTitleTxt;
-    TextView chanelNameTxt;
+    TextView channelNameTxt;
     TextView viewsTxt;
-    TextView updateTimeTxt;
+    TextView uploadedTimeTxt;
 
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
         videoImg = itemView.findViewById(R.id.video_img);
-        chanelLogoImg = itemView.findViewById(R.id.chanel_logo_img);
+        channelLogoImg = itemView.findViewById(R.id.channel_logo_img);
         videoTitleTxt = itemView.findViewById(R.id.video_title_txt);
-        chanelNameTxt = itemView.findViewById(R.id.chanel_name_txt);
+        channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
         viewsTxt = itemView.findViewById(R.id.views_txt);
-        updateTimeTxt = itemView.findViewById(R.id.update_time_txt);
+        uploadedTimeTxt = itemView.findViewById(R.id.uploaded_time_txt);
     }
 }

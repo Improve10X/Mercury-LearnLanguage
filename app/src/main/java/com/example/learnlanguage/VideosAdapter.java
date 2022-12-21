@@ -31,16 +31,16 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         Video video = videos.get(position);
-        if (video.imageUrl != null && video.imageUrl.isEmpty() == false) {
-            Picasso.get().load(video.imageUrl).into(holder.videoImg);
+        if (video.videoImageUrl != null && video.videoImageUrl.isEmpty() == false) {
+            Picasso.get().load(video.videoImageUrl).into(holder.videoImg);
         }
-        if (video.chanelLogoImageUrl != null && video.chanelLogoImageUrl.isEmpty() == false) {
-            Picasso.get().load(video.chanelLogoImageUrl).into(holder.chanelLogoImg);
+        if (video.channelLogoImageUrl != null && video.channelLogoImageUrl.isEmpty() == false) {
+            Picasso.get().load(video.channelLogoImageUrl).into(holder.channelLogoImg);
         }
         holder.videoTitleTxt.setText(video.title);
-        holder.chanelNameTxt.setText(video.chanelName);
+        holder.channelNameTxt.setText(video.channelName);
         holder.viewsTxt.setText(video.views);
-        holder.updateTimeTxt.setText(video.uploadedTime);
+        holder.uploadedTimeTxt.setText(video.uploadedTime);
     }
 
     @Override
