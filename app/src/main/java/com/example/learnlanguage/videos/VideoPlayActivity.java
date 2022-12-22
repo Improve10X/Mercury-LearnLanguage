@@ -1,8 +1,10 @@
-package com.example.learnlanguage;
+package com.example.learnlanguage.videos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.learnlanguage.R;
 
 public class VideoPlayActivity extends AppCompatActivity {
 
