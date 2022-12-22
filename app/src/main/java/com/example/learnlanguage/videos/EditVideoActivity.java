@@ -36,6 +36,7 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
         channelLogoImageUrlTxt.setText(video.channelLogoImageUrl);
         viewsTxt.setText(video.views);
         uploadedTimeTxt.setText(video.uploadedTime);
+        youtubeVideoIdTxt.setText(video.youtubePlayerId);
     }
 
     private void initViews() {
@@ -50,11 +51,12 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
             String channelLogoImageUrl = channelLogoImageUrlTxt.getText().toString();
             String views = viewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            updateVideo(video.id, title, videoImageUrl, channelName, channelLogoImageUrl, views, uploadedTime);
+            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            updateVideo(video.id, title, videoImageUrl, channelName, channelLogoImageUrl, views, uploadedTime, youtubeVideoId);
         });
     }
 
-    private void updateVideo(String id, String titleText, String videoImageUrl, String channelName, String channelLogoImageUrl, String views, String uploadedTime) {
+    private void updateVideo(String id, String titleText, String videoImageUrl, String channelName, String channelLogoImageUrl, String views, String uploadedTime, String youtubeVideoId) {
         Video updatedVideo = new Video();
         updatedVideo.title = titleText;
         updatedVideo.videoImageUrl = videoImageUrl;
@@ -62,6 +64,7 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
         updatedVideo.channelLogoImageUrl = channelLogoImageUrl;
         updatedVideo.views = views;
         updatedVideo.uploadedTime = uploadedTime;
+        updatedVideo.youtubePlayerId = youtubeVideoId;
 
         Call<Void> call = videosService.updateVideo(id, updatedVideo);
         call.enqueue(new Callback<Void>() {

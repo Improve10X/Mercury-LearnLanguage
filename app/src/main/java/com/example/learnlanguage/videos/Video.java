@@ -14,4 +14,5 @@ public class Video implements Serializable {
     public String channelName;
     public String views;
     public String uploadedTime;
+    public String youtubePlayerId;
 }

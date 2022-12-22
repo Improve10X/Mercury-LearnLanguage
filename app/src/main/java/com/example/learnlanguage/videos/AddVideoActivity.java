@@ -37,11 +37,12 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
             String channelLogoImageUrl = channelLogoImageUrlTxt.getText().toString();
             String views = viewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            addVideo(title, videoImageUrl, channelName, channelLogoImageUrl, views, uploadedTime);
+            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            addVideo(title, videoImageUrl, channelName, channelLogoImageUrl, views, uploadedTime, youtubeVideoId);
         });
     }
 
-    private void addVideo(String titleText, String videoImageUrl, String channelName, String channelLogoImageUrl, String views, String uploadedTime) {
+    private void addVideo(String titleText, String videoImageUrl, String channelName, String channelLogoImageUrl, String views, String uploadedTime, String youtubeVideoId) {
         Video video = new Video();
         video.title = titleText;
         video.videoImageUrl = videoImageUrl;
@@ -49,6 +50,7 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
         video.channelLogoImageUrl = channelLogoImageUrl;
         video.views = views;
         video.uploadedTime = uploadedTime;
+        video.youtubePlayerId = youtubeVideoId;
 
         Call<Video> call = videosService.createVideo(video);
         call.enqueue(new Callback<Video>() {
