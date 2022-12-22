@@ -88,7 +88,18 @@ public class VideosActivity extends BaseActivity {
             public void onEdit(Video video) {
                 editVideo(video);
             }
+
+            @Override
+            public void onClicked(Video video) {
+                onItemClicked(video);
+            }
         });
+    }
+
+    private void onItemClicked(Video video) {
+        Intent intent = new Intent(this, VideoPlayActivity.class);
+        intent.putExtra(Constants.KEY_VIDEO, video);
+        startActivity(intent);
     }
 
     private void deleteVideo(String id) {

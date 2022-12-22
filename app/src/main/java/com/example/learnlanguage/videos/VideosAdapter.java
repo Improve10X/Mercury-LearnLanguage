@@ -53,6 +53,9 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
         holder.editBtn.setOnClickListener(view -> {
             onItemActionListener.onEdit(video);
         });
+        holder.itemView.setOnClickListener(view -> {
+            onItemActionListener.onClicked(video);
+        });
     }
 
     @Override

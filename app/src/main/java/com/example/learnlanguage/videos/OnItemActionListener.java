@@ -7,4 +7,6 @@ public interface OnItemActionListener {
     void onDelete(String id);
 
     void onEdit(Video video);
+
+    void onClicked(Video video);
 }
