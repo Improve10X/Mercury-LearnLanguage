@@ -30,13 +30,13 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
     }
 
     private void showData() {
-        titleTxt.setText(video.title);
-        videoImageUrlTxt.setText(video.videoImageUrl);
-        channelNameTxt.setText(video.channelName);
-        channelLogoImageUrlTxt.setText(video.channelLogoImageUrl);
-        viewsTxt.setText(video.views);
-        uploadedTimeTxt.setText(video.uploadedTime);
-        youtubeVideoIdTxt.setText(video.youtubePlayerId);
+        binding.titleTxt.setText(video.title);
+        binding.videoImageUrlTxt.setText(video.videoImageUrl);
+        binding.channelNameTxt.setText(video.channelName);
+        binding.channelLogoImgUrlTxt.setText(video.channelLogoImageUrl);
+        binding.viewsTxt.setText(video.views);
+        binding.uploadedTimeTxt.setText(video.uploadedTime);
+        binding.youtubeVideoIdTxt.setText(video.youtubePlayerId);
     }
 
     private void initViews() {
@@ -45,13 +45,13 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
 
     private void handleUpdateBtn() {
         updateBtn.setOnClickListener(view -> {
-            String title = titleTxt.getText().toString();
-            String videoImageUrl = videoImageUrlTxt.getText().toString();
-            String channelName = channelNameTxt.getText().toString();
-            String channelLogoImageUrl = channelLogoImageUrlTxt.getText().toString();
-            String views = viewsTxt.getText().toString();
-            String uploadedTime = uploadedTimeTxt.getText().toString();
-            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            String title = binding.titleTxt.getText().toString();
+            String videoImageUrl = binding.videoImageUrlTxt.getText().toString();
+            String channelName = binding.channelNameTxt.getText().toString();
+            String channelLogoImageUrl = binding.channelLogoImgUrlTxt.getText().toString();
+            String views = binding.viewsTxt.getText().toString();
+            String uploadedTime = binding.uploadedTimeTxt.getText().toString();
+            String youtubeVideoId = binding.youtubeVideoIdTxt.getText().toString();
             updateVideo(video.id, title, videoImageUrl, channelName, channelLogoImageUrl, views, uploadedTime, youtubeVideoId);
         });
     }
