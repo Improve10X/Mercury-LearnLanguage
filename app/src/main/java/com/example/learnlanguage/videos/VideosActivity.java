@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.example.learnlanguage.BaseActivity;
 import com.example.learnlanguage.Constants;
 import com.example.learnlanguage.R;
+import com.example.learnlanguage.databinding.ActivityVideosBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,17 +21,16 @@ import retrofit2.Response;
 
 public class VideosActivity extends BaseActivity {
 
+    private ActivityVideosBinding binding;
     private ArrayList<Video> videos = new ArrayList<>();
-    private RecyclerView videosRv;
     private VideosAdapter videosAdapter;
-    private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_videos);
+        binding = ActivityVideosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Videos");
-        initViews();
         setupVideosAdapter();
         setupVideosRv();
         handleAdd();
@@ -58,21 +58,16 @@ public class VideosActivity extends BaseActivity {
         });
     }
 
-    private void initViews() {
-        videosRv = findViewById(R.id.videos_rv);
-        addBtn = findViewById(R.id.add_btn);
-    }
-
     private void handleAdd() {
-        addBtn.setOnClickListener(view -> {
+        binding.addBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, AddVideoActivity.class);
             startActivity(intent);
         });
     }
 
     private void setupVideosRv() {
-        videosRv.setLayoutManager(new LinearLayoutManager(this));
-        videosRv.setAdapter(videosAdapter);
+        binding.videosRv.setLayoutManager(new LinearLayoutManager(this));
+        binding.videosRv.setAdapter(videosAdapter);
     }
 
     private void setupVideosAdapter() {

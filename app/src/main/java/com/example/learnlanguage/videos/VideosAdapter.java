@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnlanguage.R;
+import com.example.learnlanguage.databinding.VideoItemBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -29,8 +30,8 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.video_item, parent, false);
-        VideoViewHolder videoViewHolder = new VideoViewHolder(view);
+        VideoItemBinding binding = VideoItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent,false);
+        VideoViewHolder videoViewHolder = new VideoViewHolder(binding);
         return videoViewHolder;
     }
 
@@ -38,22 +39,22 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         Video video = videos.get(position);
         if (video.videoImageUrl != null && video.videoImageUrl.isEmpty() == false) {
-            Picasso.get().load(video.videoImageUrl).into(holder.videoImg);
+            Picasso.get().load(video.videoImageUrl).into(holder.binding.videoImg);
         }
         if (video.channelLogoImageUrl != null && video.channelLogoImageUrl.isEmpty() == false) {
-            Picasso.get().load(video.channelLogoImageUrl).into(holder.channelLogoImg);
+            Picasso.get().load(video.channelLogoImageUrl).into(holder.binding.channelLogoImg);
         }
-        holder.videoTitleTxt.setText(video.title);
-        holder.channelNameTxt.setText(video.channelName);
-        holder.viewsTxt.setText(video.views);
-        holder.uploadedTimeTxt.setText(video.uploadedTime);
-        holder.deleteBtn.setOnClickListener(view -> {
+        holder.binding.videoTitleTxt.setText(video.title);
+        holder.binding.channelNameTxt.setText(video.channelName);
+        holder.binding.viewsTxt.setText(video.views);
+        holder.binding.uploadedTimeTxt.setText(video.uploadedTime);
+        holder.binding.deleteBtn.setOnClickListener(view -> {
             onItemActionListener.onDelete(video.id);
         });
-        holder.editBtn.setOnClickListener(view -> {
+        holder.binding.editBtn.setOnClickListener(view -> {
             onItemActionListener.onEdit(video);
         });
-        holder.itemView.setOnClickListener(view -> {
+        holder.binding.getRoot().setOnClickListener(view -> {
             onItemActionListener.onClicked(video);
         });
     }
