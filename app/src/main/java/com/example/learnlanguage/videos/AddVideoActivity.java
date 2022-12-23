@@ -14,23 +14,16 @@ import retrofit2.Response;
 
 public class AddVideoActivity extends BaseAddEditVideoActivity {
 
-    private Button addBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle("Add Video");
-        initViews();
-        addBtn.setVisibility(View.VISIBLE);
+        binding.addBtn.setVisibility(View.VISIBLE);
         handleAddBtn();
     }
 
-    private void initViews() {
-        addBtn = findViewById(R.id.add_btn);
-    }
-
     private void handleAddBtn() {
-        addBtn.setOnClickListener(view -> {
+        binding.addBtn.setOnClickListener(view -> {
             String title = binding.titleTxt.getText().toString();
             String videoImageUrl = binding.videoImageUrlTxt.getText().toString();
             String channelName = binding.channelNameTxt.getText().toString();

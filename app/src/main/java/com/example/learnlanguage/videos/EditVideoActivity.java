@@ -13,17 +13,15 @@ import retrofit2.Response;
 
 public class EditVideoActivity extends BaseAddEditVideoActivity {
 
-    private Button updateBtn;
     private Video video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initViews();
         getSupportActionBar().setTitle("Edit Video");
         if (getIntent().hasExtra(Constants.KEY_VIDEO)) {
             video = (Video) getIntent().getSerializableExtra(Constants.KEY_VIDEO);
-            updateBtn.setVisibility(View.VISIBLE);
+            binding.updateBtn.setVisibility(View.VISIBLE);
             handleUpdateBtn();
             showData();
         }
@@ -39,12 +37,8 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
         binding.youtubeVideoIdTxt.setText(video.youtubePlayerId);
     }
 
-    private void initViews() {
-        updateBtn = findViewById(R.id.update_btn);
-    }
-
     private void handleUpdateBtn() {
-        updateBtn.setOnClickListener(view -> {
+        binding.updateBtn.setOnClickListener(view -> {
             String title = binding.titleTxt.getText().toString();
             String videoImageUrl = binding.videoImageUrlTxt.getText().toString();
             String channelName = binding.channelNameTxt.getText().toString();
